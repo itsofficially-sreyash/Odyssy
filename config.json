@@ -1,0 +1,6 @@
+{
+  "hotkey": "<ctrl>+<alt>+a",
+  "lm_studio_url": "http://localhost:1234/v1/chat/completions",
+  "overlay_width_vw": 35,
+  "overlay_opacity": 0.6
+}
