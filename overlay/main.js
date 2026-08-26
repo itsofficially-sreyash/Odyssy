@@ -1,14 +1,21 @@
 const contentDiv = document.getElementById('content');
+const statusDot = document.getElementById('status-dot');
 const WS_URL = 'ws://localhost:8000/ws';
 let ws;
 
+function triggerCapture() {
+    fetch('http://localhost:8000/trigger', { method: 'POST' })
+        .catch(e => { contentDiv.innerHTML = `<span style="color:red">Trigger failed: ${e}</span>`; });
+}
+
 function connect() {
     ws = new WebSocket(WS_URL);
-    
+
     ws.onopen = () => {
+        statusDot.className = 'connected';
         console.log("Connected to local brain");
     };
-    
+
     ws.onmessage = (event) => {
         try {
             const msg = JSON.parse(event.data);
@@ -31,8 +38,9 @@ function connect() {
             console.error(e);
         }
     };
-    
+
     ws.onclose = () => {
+        statusDot.className = '';
         setTimeout(connect, 2000);
     };
 }

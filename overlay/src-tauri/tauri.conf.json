@@ -1,46 +1,30 @@
 {
+  "productName": "Odyssy Overlay",
+  "version": "0.1.0",
+  "identifier": "com.odyssy.overlay",
   "build": {
-    "beforeDevCommand": "",
-    "beforeBuildCommand": "",
-    "devPath": "../",
-    "distDir": "../dist"
+    "frontendDist": "../"
   },
-  "package": {
-    "productName": "Odyssy Overlay",
-    "version": "0.1.0"
-  },
-  "tauri": {
-    "allowlist": {
-      "all": false
-    },
-    "bundle": {
-      "active": true,
-      "targets": "all",
-      "identifier": "com.odyssy.overlay",
-      "icon": [
-        "icons/32x32.png",
-        "icons/128x128.png",
-        "icons/128x128@2x.png",
-        "icons/icon.icns",
-        "icons/icon.ico"
-      ]
-    },
-    "security": {
-      "csp": null
-    },
+  "app": {
     "windows": [
       {
-        "fullscreen": false,
-        "height": 1080,
-        "resizable": true,
         "title": "Odyssy Overlay",
         "width": 672,
+        "height": 1080,
+        "resizable": true,
+        "fullscreen": false,
         "alwaysOnTop": true,
         "transparent": true,
-        "decorations": false,
-        "x": null,
-        "y": null
+        "decorations": false
       }
-    ]
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": []
   }
 }

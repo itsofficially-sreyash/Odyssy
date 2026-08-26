@@ -22,15 +22,50 @@ body {
     background-color: rgba(0, 0, 0, var(--bg-opacity));
     width: var(--overlay-width);
     height: 100vh;
-    padding: 20px;
+    padding: 0;
     box-sizing: border-box;
     backdrop-filter: blur(5px);
     border-left: 1px solid rgba(255, 255, 255, 0.1);
-    overflow-y: auto;
-    font-size: 16px;
-    line-height: 1.5;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
+
+#header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    flex-shrink: 0;
+}
+
+#status-dot {
+    font-size: 10px;
+    color: #ff4444;
+    transition: color 0.3s;
+}
+
+#status-dot.connected { color: #44ff88; }
+
+#trigger-btn {
+    background: rgba(0, 140, 255, 0.3);
+    border: 1px solid rgba(0, 140, 255, 0.5);
+    color: #fff;
+    padding: 4px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background 0.2s;
+}
+
+#trigger-btn:hover { background: rgba(0, 140, 255, 0.6); }
 
 #content {
     white-space: pre-wrap;
+    padding: 16px;
+    overflow-y: auto;
+    flex: 1;
+    font-size: 16px;
+    line-height: 1.5;
 }
