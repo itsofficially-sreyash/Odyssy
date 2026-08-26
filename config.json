@@ -1,6 +1,8 @@
 {
   "hotkey": "<ctrl>+<alt>+a",
   "lm_studio_url": "http://localhost:1234/v1/chat/completions",
+  "model": "qwen/qwen3.5-9b",
   "overlay_width_vw": 35,
-  "overlay_opacity": 0.6
+  "overlay_opacity": 0.6,
+  "max_image_dim": 1280
 }
